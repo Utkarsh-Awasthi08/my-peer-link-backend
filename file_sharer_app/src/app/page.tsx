@@ -28,7 +28,7 @@ export default function Home() {
         },
         maxContentLength: Infinity,
         maxBodyLength: Infinity,
-        validateStatus: (status) => true, // ✅ let us handle 413 in catch
+        validateStatus: () => true, // ✅ let us handle 413 in catch
         onUploadProgress: (progressEvent) => {
           if (progressEvent.total) {
             const percent = Math.round((progressEvent.loaded * 100) / progressEvent.total);
@@ -49,9 +49,9 @@ export default function Home() {
   
       setPort(response.data.port);
       toast.success("Upload Completed 🚀");
-    } catch (error: any) {
-      toast.error("❌ Failed to upload. Please try again.");
+    } catch (error: unknown) {
       console.error("Error uploading file:", error);
+      toast.error("❌ Failed to upload. Please try again.");
     } finally {
       setIsUploading(false);
     }

@@ -1,0 +1,5 @@
+target/
+.idea/
+*.iml
+.DS_Store
+file_sharer_app/
