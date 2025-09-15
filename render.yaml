@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: my-peer-link-backend
+    env: java
+    plan: free
+    buildCommand: ./mvnw clean package -DskipTests
+    startCommand: java -jar target/p2p-app-1.0-SNAPSHOT.jar
+    envVars:
+      - key: PORT
+        value: 8080
