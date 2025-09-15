@@ -6,7 +6,7 @@ import java.io.IOException;
 public class App {
     public static void main(String[] args) {
         try {
-            int port = 8080; // Fixed port
+            int port = Integer.parseInt(System.getenv().getOrDefault("PORT", "8080"));
             FileController fileController = new FileController(port);
             fileController.start();
 
