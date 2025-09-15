@@ -5,6 +5,3 @@ services:
     plan: free
     # The build command is now handled by the Dockerfile
     # The start command is also in the Dockerfile's CMD
-    envVars:
-      - key: PORT
-        value: 8080
